@@ -45,34 +45,73 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center container-custom">
-        {/* Custom 3D Cube Logo */}
+        {/* World's Best 3D Holographic Cube Logo */}
         <div className="flex justify-center mb-8">
-          <div className="perspective-1000 w-40 h-40">
-            <div className="cube-container w-full h-full relative transform-gpu animate-cube-spin">
-              {/* Front face */}
-              <div className="cube-face front absolute w-full h-full bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center border-2 border-neon-blue/30">
-                <span className="font-pixel text-4xl text-white drop-shadow-lg">C</span>
+          <div className="logo-container relative w-48 h-48 group cursor-pointer">
+            {/* Outer glow ring */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green opacity-20 animate-spin-slow blur-xl"></div>
+            
+            {/* Particle orbits */}
+            <div className="absolute inset-4 animate-spin-reverse">
+              <div className="particle-orbit absolute top-0 left-1/2 w-2 h-2 bg-neon-blue rounded-full transform -translate-x-1/2 animate-pulse"></div>
+              <div className="particle-orbit absolute bottom-0 left-1/2 w-2 h-2 bg-neon-green rounded-full transform -translate-x-1/2 animate-pulse delay-500"></div>
+              <div className="particle-orbit absolute left-0 top-1/2 w-2 h-2 bg-neon-purple rounded-full transform -translate-y-1/2 animate-pulse delay-1000"></div>
+              <div className="particle-orbit absolute right-0 top-1/2 w-2 h-2 bg-neon-gold rounded-full transform -translate-y-1/2 animate-pulse delay-1500"></div>
+            </div>
+            
+            {/* Main cube container */}
+            <div className="absolute inset-8 perspective-1000">
+              <div className="cube-logo w-full h-full relative transform-gpu group-hover:scale-110 transition-transform duration-700">
+                
+                {/* Inner core cube */}
+                <div className="absolute inset-4 cube-inner animate-cube-float">
+                  <div className="cube-face-inner front-inner absolute w-full h-full bg-gradient-to-br from-neon-blue/80 to-cyan-400/80 rounded-lg border border-neon-blue/50 backdrop-blur-sm flex items-center justify-center">
+                    <div className="text-2xl font-pixel text-white drop-shadow-2xl animate-pulse">C</div>
+                  </div>
+                  <div className="cube-face-inner back-inner absolute w-full h-full bg-gradient-to-br from-neon-purple/80 to-violet-400/80 rounded-lg border border-neon-purple/50 backdrop-blur-sm flex items-center justify-center">
+                    <div className="text-2xl font-pixel text-white drop-shadow-2xl animate-pulse delay-200">U</div>
+                  </div>
+                  <div className="cube-face-inner right-inner absolute w-full h-full bg-gradient-to-br from-neon-green/80 to-emerald-400/80 rounded-lg border border-neon-green/50 backdrop-blur-sm flex items-center justify-center">
+                    <div className="text-2xl font-pixel text-white drop-shadow-2xl animate-pulse delay-400">B</div>
+                  </div>
+                  <div className="cube-face-inner left-inner absolute w-full h-full bg-gradient-to-br from-neon-gold/80 to-yellow-400/80 rounded-lg border border-neon-gold/50 backdrop-blur-sm flex items-center justify-center">
+                    <div className="text-2xl font-pixel text-white drop-shadow-2xl animate-pulse delay-600">E</div>
+                  </div>
+                  <div className="cube-face-inner top-inner absolute w-full h-full bg-gradient-to-br from-cyan-400/60 to-blue-400/60 rounded-lg border border-cyan-400/50 backdrop-blur-sm flex items-center justify-center">
+                    <div className="text-xl font-pixel text-white drop-shadow-2xl animate-pulse delay-800">⚡</div>
+                  </div>
+                  <div className="cube-face-inner bottom-inner absolute w-full h-full bg-gradient-to-br from-violet-400/60 to-purple-400/60 rounded-lg border border-violet-400/50 backdrop-blur-sm flex items-center justify-center">
+                    <div className="text-xl font-pixel text-white drop-shadow-2xl animate-pulse delay-1000">💎</div>
+                  </div>
+                </div>
+                
+                {/* Outer holographic cube */}
+                <div className="cube-outer animate-cube-hologram">
+                  <div className="cube-face-outer front-outer absolute w-full h-full bg-gradient-to-br from-neon-blue/30 to-transparent rounded-xl border-2 border-neon-blue/40 backdrop-blur-md">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
+                  </div>
+                  <div className="cube-face-outer back-outer absolute w-full h-full bg-gradient-to-br from-neon-purple/30 to-transparent rounded-xl border-2 border-neon-purple/40 backdrop-blur-md">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
+                  </div>
+                  <div className="cube-face-outer right-outer absolute w-full h-full bg-gradient-to-br from-neon-green/30 to-transparent rounded-xl border-2 border-neon-green/40 backdrop-blur-md">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
+                  </div>
+                  <div className="cube-face-outer left-outer absolute w-full h-full bg-gradient-to-br from-neon-gold/30 to-transparent rounded-xl border-2 border-neon-gold/40 backdrop-blur-md">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
+                  </div>
+                  <div className="cube-face-outer top-outer absolute w-full h-full bg-gradient-to-br from-cyan-400/20 to-transparent rounded-xl border-2 border-cyan-400/40 backdrop-blur-md">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
+                  </div>
+                  <div className="cube-face-outer bottom-outer absolute w-full h-full bg-gradient-to-br from-violet-400/20 to-transparent rounded-xl border-2 border-violet-400/40 backdrop-blur-md">
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent"></div>
+                  </div>
+                </div>
               </div>
-              {/* Back face */}
-              <div className="cube-face back absolute w-full h-full bg-gradient-to-br from-neon-purple to-neon-green rounded-lg flex items-center justify-center border-2 border-neon-purple/30">
-                <span className="font-pixel text-4xl text-white drop-shadow-lg">N</span>
-              </div>
-              {/* Right face */}
-              <div className="cube-face right absolute w-full h-full bg-gradient-to-br from-neon-green to-neon-gold rounded-lg flex items-center justify-center border-2 border-neon-green/30">
-                <span className="font-pixel text-4xl text-white drop-shadow-lg">U</span>
-              </div>
-              {/* Left face */}
-              <div className="cube-face left absolute w-full h-full bg-gradient-to-br from-neon-gold to-neon-blue rounded-lg flex items-center justify-center border-2 border-neon-gold/30">
-                <span className="font-pixel text-4xl text-white drop-shadow-lg">B</span>
-              </div>
-              {/* Top face */}
-              <div className="cube-face top absolute w-full h-full bg-gradient-to-br from-neon-blue/80 to-neon-purple/80 rounded-lg flex items-center justify-center border-2 border-neon-blue/40">
-                <span className="font-pixel text-3xl text-white drop-shadow-lg">⬢</span>
-              </div>
-              {/* Bottom face */}
-              <div className="cube-face bottom absolute w-full h-full bg-gradient-to-br from-neon-purple/60 to-neon-green/60 rounded-lg flex items-center justify-center border-2 border-neon-purple/40">
-                <span className="font-pixel text-3xl text-white drop-shadow-lg">E</span>
-              </div>
+            </div>
+            
+            {/* Energy pulses */}
+            <div className="absolute inset-0 animate-ping opacity-20">
+              <div className="w-full h-full rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green"></div>
             </div>
           </div>
         </div>

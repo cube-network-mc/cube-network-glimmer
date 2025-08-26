@@ -75,42 +75,127 @@
 
 /* Custom animations and effects */
 @layer components {
-  /* 3D Cube animation */
+  /* World's Best 3D Cube Logo */
+  .logo-container {
+    filter: drop-shadow(0 0 50px hsl(var(--neon-blue) / 0.5));
+  }
+
+  .logo-container:hover {
+    filter: drop-shadow(0 0 80px hsl(var(--neon-blue) / 0.8)) drop-shadow(0 0 120px hsl(var(--neon-purple) / 0.6));
+  }
+
   .perspective-1000 {
     perspective: 1000px;
   }
 
-  .cube-container {
+  .cube-logo {
     transform-style: preserve-3d;
-    animation: cube-3d-spin 20s linear infinite;
+    animation: cube-master-spin 25s linear infinite;
   }
 
-  .cube-face {
+  .cube-outer {
+    transform-style: preserve-3d;
+    animation: cube-hologram 15s linear infinite reverse;
+  }
+
+  .cube-inner {
+    transform-style: preserve-3d;
+    animation: cube-float 8s ease-in-out infinite;
+  }
+
+  /* Inner cube faces */
+  .cube-face-inner {
     backface-visibility: hidden;
   }
 
-  .cube-face.front {
+  .cube-face-inner.front-inner {
+    transform: rotateY(0deg) translateZ(40px);
+  }
+
+  .cube-face-inner.back-inner {
+    transform: rotateY(180deg) translateZ(40px);
+  }
+
+  .cube-face-inner.right-inner {
+    transform: rotateY(90deg) translateZ(40px);
+  }
+
+  .cube-face-inner.left-inner {
+    transform: rotateY(-90deg) translateZ(40px);
+  }
+
+  .cube-face-inner.top-inner {
+    transform: rotateX(90deg) translateZ(40px);
+  }
+
+  .cube-face-inner.bottom-inner {
+    transform: rotateX(-90deg) translateZ(40px);
+  }
+
+  /* Outer holographic cube faces */
+  .cube-face-outer {
+    backface-visibility: hidden;
+  }
+
+  .cube-face-outer.front-outer {
     transform: rotateY(0deg) translateZ(80px);
   }
 
-  .cube-face.back {
+  .cube-face-outer.back-outer {
     transform: rotateY(180deg) translateZ(80px);
   }
 
-  .cube-face.right {
+  .cube-face-outer.right-outer {
     transform: rotateY(90deg) translateZ(80px);
   }
 
-  .cube-face.left {
+  .cube-face-outer.left-outer {
     transform: rotateY(-90deg) translateZ(80px);
   }
 
-  .cube-face.top {
+  .cube-face-outer.top-outer {
     transform: rotateX(90deg) translateZ(80px);
   }
 
-  .cube-face.bottom {
+  .cube-face-outer.bottom-outer {
     transform: rotateX(-90deg) translateZ(80px);
+  }
+
+  /* Animations */
+  @keyframes cube-master-spin {
+    0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
+    33% { transform: rotateX(120deg) rotateY(120deg) rotateZ(120deg); }
+    66% { transform: rotateX(240deg) rotateY(240deg) rotateZ(240deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
+  }
+
+  @keyframes cube-hologram {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    50% { transform: rotateX(180deg) rotateY(180deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+  }
+
+  @keyframes cube-float {
+    0%, 100% { transform: translateY(0px) rotateX(0deg); }
+    50% { transform: translateY(-10px) rotateX(180deg); }
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes spin-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+
+  .animate-spin-reverse {
+    animation: spin-reverse 12s linear infinite;
   }
 
   @keyframes cube-3d-spin {

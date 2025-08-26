@@ -101,6 +101,11 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'cube-spin': 'cube-spin 20s linear infinite',
 				'cube-3d-spin': 'cube-3d-spin 20s linear infinite',
+				'cube-master-spin': 'cube-master-spin 25s linear infinite',
+				'cube-hologram': 'cube-hologram 15s linear infinite reverse',
+				'cube-float': 'cube-float 8s ease-in-out infinite',
+				'spin-slow': 'spin-slow 8s linear infinite',
+				'spin-reverse': 'spin-reverse 12s linear infinite',
 				'float': 'float 6s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite alternate',
 				'slide-up': 'slide-up 0.6s ease-out forwards'
