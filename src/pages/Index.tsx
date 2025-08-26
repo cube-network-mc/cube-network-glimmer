@@ -4,6 +4,9 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Vote from '@/components/Vote';
+import Rules from '@/components/Rules';
+import Store from '@/components/Store';
+import Discord from '@/components/Discord';
 
 const Index = () => {
   return (
@@ -15,34 +18,9 @@ const Index = () => {
         </div>
         <About />
         <Vote />
-        
-        {/* Temporary placeholder for other sections */}
-        <section id="rules" className="section-padding section-bg">
-          <div className="container-custom text-center">
-            <h2 className="font-pixel text-4xl text-neon mb-8">RULES</h2>
-            <div className="card-glow max-w-2xl mx-auto">
-              <p className="font-mono text-muted-foreground">Coming soon...</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="store" className="section-padding section-bg">
-          <div className="container-custom text-center">
-            <h2 className="font-pixel text-4xl text-neon mb-8">STORE</h2>
-            <div className="card-glow max-w-2xl mx-auto">
-              <p className="font-mono text-muted-foreground">Coming soon...</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="discord" className="section-padding section-bg">
-          <div className="container-custom text-center">
-            <h2 className="font-pixel text-4xl text-neon mb-8">DISCORD</h2>
-            <div className="card-glow max-w-2xl mx-auto">
-              <p className="font-mono text-muted-foreground">Coming soon...</p>
-            </div>
-          </div>
-        </section>
+        <Rules />
+        <Store />
+        <Discord />
       </main>
 
       {/* Footer */}

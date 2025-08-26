@@ -45,12 +45,16 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center container-custom">
-        {/* 3D Spinning Cube */}
+        {/* 3D Spinning Cube Logo */}
         <div className="flex justify-center mb-8">
-          <div className="cube-3d w-32 h-32 mx-auto">
-            <div className="w-32 h-32 bg-cube-gradient rounded-lg shadow-neon-blue transform rotate-12 hover:rotate-0 transition-transform duration-500">
-              <div className="w-full h-full bg-gradient-to-br from-neon-blue/20 to-neon-purple/20 rounded-lg flex items-center justify-center">
-                <span className="text-4xl font-pixel text-white drop-shadow-lg">C</span>
+          <div className="cube-3d w-40 h-40 mx-auto">
+            <div className="w-40 h-40 bg-cube-gradient rounded-xl shadow-neon-blue transform rotate-12 hover:rotate-0 transition-transform duration-500 p-4">
+              <div className="w-full h-full bg-gradient-to-br from-neon-blue/10 to-neon-purple/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
+                <img 
+                  src="/cube-logo.png" 
+                  alt="Cube Network Logo" 
+                  className="w-24 h-24 object-contain filter brightness-0 invert"
+                />
               </div>
             </div>
           </div>
