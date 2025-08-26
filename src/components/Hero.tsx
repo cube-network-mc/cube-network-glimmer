@@ -45,16 +45,33 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 text-center container-custom">
-        {/* 3D Spinning Cube Logo */}
+        {/* Custom 3D Cube Logo */}
         <div className="flex justify-center mb-8">
-          <div className="cube-3d w-40 h-40 mx-auto">
-            <div className="w-40 h-40 bg-cube-gradient rounded-xl shadow-neon-blue transform rotate-12 hover:rotate-0 transition-transform duration-500 p-4">
-              <div className="w-full h-full bg-gradient-to-br from-neon-blue/10 to-neon-purple/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                <img 
-                  src="/cube-logo.png" 
-                  alt="Cube Network Logo" 
-                  className="w-24 h-24 object-contain filter brightness-0 invert"
-                />
+          <div className="perspective-1000 w-40 h-40">
+            <div className="cube-container w-full h-full relative transform-gpu animate-cube-spin">
+              {/* Front face */}
+              <div className="cube-face front absolute w-full h-full bg-gradient-to-br from-neon-blue to-neon-purple rounded-lg flex items-center justify-center border-2 border-neon-blue/30">
+                <span className="font-pixel text-4xl text-white drop-shadow-lg">C</span>
+              </div>
+              {/* Back face */}
+              <div className="cube-face back absolute w-full h-full bg-gradient-to-br from-neon-purple to-neon-green rounded-lg flex items-center justify-center border-2 border-neon-purple/30">
+                <span className="font-pixel text-4xl text-white drop-shadow-lg">N</span>
+              </div>
+              {/* Right face */}
+              <div className="cube-face right absolute w-full h-full bg-gradient-to-br from-neon-green to-neon-gold rounded-lg flex items-center justify-center border-2 border-neon-green/30">
+                <span className="font-pixel text-4xl text-white drop-shadow-lg">U</span>
+              </div>
+              {/* Left face */}
+              <div className="cube-face left absolute w-full h-full bg-gradient-to-br from-neon-gold to-neon-blue rounded-lg flex items-center justify-center border-2 border-neon-gold/30">
+                <span className="font-pixel text-4xl text-white drop-shadow-lg">B</span>
+              </div>
+              {/* Top face */}
+              <div className="cube-face top absolute w-full h-full bg-gradient-to-br from-neon-blue/80 to-neon-purple/80 rounded-lg flex items-center justify-center border-2 border-neon-blue/40">
+                <span className="font-pixel text-3xl text-white drop-shadow-lg">⬢</span>
+              </div>
+              {/* Bottom face */}
+              <div className="cube-face bottom absolute w-full h-full bg-gradient-to-br from-neon-purple/60 to-neon-green/60 rounded-lg flex items-center justify-center border-2 border-neon-purple/40">
+                <span className="font-pixel text-3xl text-white drop-shadow-lg">E</span>
               </div>
             </div>
           </div>

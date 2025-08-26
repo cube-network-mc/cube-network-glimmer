@@ -100,6 +100,7 @@ export default {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'cube-spin': 'cube-spin 20s linear infinite',
+				'cube-3d-spin': 'cube-3d-spin 20s linear infinite',
 				'float': 'float 6s ease-in-out infinite',
 				'glow': 'glow 2s ease-in-out infinite alternate',
 				'slide-up': 'slide-up 0.6s ease-out forwards'

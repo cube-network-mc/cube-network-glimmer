@@ -76,9 +76,49 @@
 /* Custom animations and effects */
 @layer components {
   /* 3D Cube animation */
-  .cube-3d {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .cube-container {
     transform-style: preserve-3d;
-    animation: cube-spin 20s linear infinite;
+    animation: cube-3d-spin 20s linear infinite;
+  }
+
+  .cube-face {
+    backface-visibility: hidden;
+  }
+
+  .cube-face.front {
+    transform: rotateY(0deg) translateZ(80px);
+  }
+
+  .cube-face.back {
+    transform: rotateY(180deg) translateZ(80px);
+  }
+
+  .cube-face.right {
+    transform: rotateY(90deg) translateZ(80px);
+  }
+
+  .cube-face.left {
+    transform: rotateY(-90deg) translateZ(80px);
+  }
+
+  .cube-face.top {
+    transform: rotateX(90deg) translateZ(80px);
+  }
+
+  .cube-face.bottom {
+    transform: rotateX(-90deg) translateZ(80px);
+  }
+
+  @keyframes cube-3d-spin {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    25% { transform: rotateX(90deg) rotateY(90deg); }
+    50% { transform: rotateX(180deg) rotateY(180deg); }
+    75% { transform: rotateX(270deg) rotateY(270deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
   }
 
   @keyframes cube-spin {
